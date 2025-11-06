@@ -1,0 +1,143 @@
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.scrollableContent {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 80px;
+}
+
+.scrollWrapper {
+    padding: 0 3vw;
+}
+
+.fixedFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 2vw;
+    background: white;
+    z-index: 10;
+}
+.circleButton {
+    background: transparent;
+}
+
+.modalHeader {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    position: relative;
+    z-index: 2;
+    background: var(--ultralight-gray);
+    margin: 3vw 0;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    background: transparent;
+}
+
+.searchIcon, .clearIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.searchIcon img, .clearIcon img {
+    width: 30px;
+    height: 30px;
+}
+
+.collectionsContainer {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collectionsList {
+    margin-bottom: 80px;
+}
+
+.collectionItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    min-height: 60px;
+}
+
+.collectionImg {
+    width: 20vw;
+    height: 20vw;
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.collectionInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.collectionName {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.hiddenCheckbox {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--black);
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.hiddenCheckbox:checked {
+    background-color: var(--black);
+    background-image: url("/subicons/checkmark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+}
+
+.noResults {
+    padding: 16px;
+    text-align: center;
+    color: #666;
+}
+
+.saveButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

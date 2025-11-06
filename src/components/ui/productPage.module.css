@@ -1,0 +1,253 @@
+.container {
+    display: grid;
+    grid-template-rows: 45% 55%;
+    height: 94vh;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 96vw;
+    height: 60vh;
+    margin: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.sliderInner {
+    display: flex;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.backButton {
+    position: absolute;
+    z-index: 1000;
+    top: 5px;
+    left: 5px;
+    background-color: transparent;
+}
+.shareButton {
+    position: absolute;
+    z-index: 1000;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+
+}
+.progressDots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--white);
+}
+
+.infoCard {
+    margin-top: 20vh;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    width: 94vw;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title {
+    font-family: 'Suisse Intl', sans-serif;
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+.brand {
+    font-family: 'Suisse Intl', sans-serif;
+    font-size: 12px;
+    color: var(--light-warm-gray);
+}
+
+.price {
+    font-family: 'Suisse Intl', sans-serif;
+    font-size: 14px;
+    padding: 12px 0;
+    color: var(--dark-gray);
+}
+.blockTitle {
+    font-family: 'Suisse Intl', sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+    color: black;
+}
+
+.description {
+    font-family: 'Suisse Intl', sans-serif;
+    font-size: 12px;
+    color: var(--dark-warm-gray);
+    line-height: 16px;
+    border-bottom: 2px var(--light-warm-gray);
+}
+.bar {
+    display: flex;
+    overflow-x: auto;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    scrollbar-width: none;
+    gap: 8px;
+    flex-wrap: nowrap;
+    width: 96vw;
+}
+.bar::-webkit-scrollbar {
+    display: none;
+}
+.aboutSize {
+    font-family: 'Suisse', sans-serif;
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--light-cold-gray);
+}
+
+.sizeOption {
+    font-family: 'Suisse', sans-serif;
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--black);
+    background: var(--ultralight-gray);
+    box-shadow: none !important;
+}
+.sizeOption.active {
+    border-color: 1px solid var(--black);
+    background-color: var(--white);
+}
+.colorTitle {
+    font-family: 'Suisse', sans-serif;
+    font-size: 12px;
+    padding-left: 5px;
+    color: var(--light-cold-gray);
+
+}
+.colorCircle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 5px;
+    border: 1px solid var(--light-gray);
+
+}
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.clamped {
+    -webkit-line-clamp: 4;
+}
+
+.readMoreButton {
+    background: none;
+    border: none;
+    color: var(--light-warm-gray);
+    cursor: pointer;
+    font-weight: 500;
+    float: left;
+}
+
+.colorsContainer {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: row;
+}
+.colorHeader {
+    display: flex;
+    align-items: center;
+}
+.colorsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.colorCircleWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px 8px;
+    flex-shrink: 0;
+}
+.colorCircle.selected {
+    position: relative;
+    border: 1px solid white;
+    box-shadow: 0 0 0 0.5px white;
+}
+
+.colorCircle.selected::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    padding: 3px;
+}
+.border {
+    border-bottom: 1px solid var(--light-gray);
+}
+.infoSection {
+    padding-bottom: 40px;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+
+.infoLabel {
+    font-family: 'Suisse', sans-serif;
+    font-size: 12px;
+    color: var(--light-cold-gray);
+    flex: 0 0 20%;
+    text-align: left;
+}
+
+.infoValue {
+    font-family: 'Suisse', sans-serif;
+    font-size: 12px;
+    color: var(--black);
+    flex: 0 0 70%;
+    padding-left: 10px;
+}

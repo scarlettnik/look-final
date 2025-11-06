@@ -1,0 +1,43 @@
+import styles from "../../ui/profile.module.css";
+import ParamControl from "./ParamControl.jsx";
+import {useEffect, useState} from "react";
+
+const ParamsTab = ({ params, updateParam }) => {
+    const handleChange = (field, value) => {
+        updateParam(field, value);
+    };
+
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+        setHeight(window.innerHeight*0.27);
+    }, [])
+    return (
+        <div style={{height: height}} className={styles.paramsForm}>
+            <div className={styles.paramsInputGroup}>
+                <ParamControl
+                    label="Объем груди"
+                    value={params.size_parameters?.breast || 90}
+                    onChange={(value) => handleChange("breast", value)}
+                    min={40}
+                    max={200}
+                />
+                <ParamControl
+                    label="Объем талии"
+                    value={params.size_parameters?.waist || 60}
+                    onChange={(value) => handleChange("waist", value)}
+                    min={40}
+                    max={200}
+                />
+                <ParamControl
+                    label="Объем бедер"
+                    value={params.size_parameters?.hip || 90}
+                    onChange={(value) => handleChange("hip", value)}
+                    min={40}
+                    max={200}
+                />
+            </div>
+        </div>
+    );
+};
+export default ParamsTab
